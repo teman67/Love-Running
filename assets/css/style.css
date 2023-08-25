@@ -9,13 +9,15 @@
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
-    color:#3a3a3a
+    color: #3a3a3a
 }
 
-h1 , h2 {font-family: Oswald, sans-serif;
-text-transform: uppercase;
-letter-spacing: 4px;
-color: #252525;
+h1,
+h2 {
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #252525;
 }
 
 #logo {
@@ -24,16 +26,17 @@ color: #252525;
 }
 
 #menu {
-   font-size: 110%;
-   letter-spacing: 4px; 
+    font-size: 110%;
+    letter-spacing: 4px;
 }
 
-#menu, #logo {
+#menu,
+#logo {
     line-height: 75px;
 }
 
 #menu li {
-    float:right;
+    float: right;
     list-style-type: none;
     margin-right: 30px;
 }
@@ -43,10 +46,64 @@ color: #252525;
     color: inherit;
 }
 
-#menu a:hover{
+#menu a:hover {
     border-bottom: 1px solid #3a3a3a;
 }
 
-.active{
+.active {
     border-bottom: 1px solid #3a3a3a;
+}
+
+#hero-outer {
+    height: 600px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#cover-text,
+#cover-text h2 {
+    color: white;
+
+}
+
+#hero-image {
+    height: 600px;
+    width: 100%;
+    background: url(../images/hero-image.webp) no-repeat center center;
+
+    /* add animation */
+    animation-name: zoom-image;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes zoom-image {
+    from {
+        transform: scale(1);
+
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
+
+#cover-text {
+    font-size: 130%;
+    font-family: Oswald, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    width: 300px;
+    length: 200px;
+
+    padding-top: 40px;
+    padding-left: 10px;
+
+    background-color: rgba(241, 109, 107, 0.7);
+    bottom: 30px;
+    right: 150px;
+    position: absolute;
 }
