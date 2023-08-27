@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald&display=swap');
 
 * {
     margin: 0;
@@ -9,8 +9,10 @@
 body {
     font-family: Lato, sans-serif;
     font-weight: 300;
-    color: #3a3a3a
+    color: #3a3a3a;
 }
+
+/* headings and logo */
 
 h1,
 h2 {
@@ -22,9 +24,11 @@ h2 {
 
 #logo {
     float: left;
-    font-size: 250%;
+    font-size: 280%;
     margin-left: 30px;
 }
+
+/* navigation links */
 
 #menu {
     font-size: 110%;
@@ -55,36 +59,36 @@ h2 {
     border-bottom: 1px solid #3a3a3a;
 }
 
+/* hero image and cover text */
+
 #hero-outer {
     height: 600px;
     width: 100%;
     overflow: hidden;
-    /* relative to its mail position */
+
     position: relative;
 }
 
 #cover-text,
 #cover-text h2 {
-    color: white;
-
+    color: #fff;
 }
 
 #hero-image {
     height: 600px;
     width: 100%;
-    background: url(../images/hero-image.webp) no-repeat center center;
+    background: url('../images/hero-image.webp') no-repeat center center;
 
-    /* add animation */
-    animation-name: zoom-image;
+    /* animates zoom effect on loading page */
+    animation-name: hero-zoom;
     animation-duration: 5s;
     animation-fill-mode: forwards;
-
 }
 
-@keyframes zoom-image {
+/* creates the level of zoom for hero image */
+@keyframes hero-zoom {
     from {
         transform: scale(1);
-
     }
 
     to {
@@ -99,45 +103,49 @@ h2 {
     letter-spacing: 4px;
 
     width: 300px;
-    length: 200px;
+    height: 200px;
 
     padding-top: 40px;
     padding-left: 10px;
 
-    background-color: rgba(241, 109, 107, 0.7);
+    background-color: rgba(241, 109, 107, .7);
+
     bottom: 30px;
     right: 150px;
-    /* absoulte to the parent, here the parent is hero-outer */
+
     position: absolute;
 }
 
-#left {
+/* club ethos */
+
+#club-ethos {
+    height: 600px;
+}
+
+#left-about {
     padding-top: 30px;
     width: 33%;
     float: left;
-
 }
 
-#right {
+#right-about {
     padding-top: 30px;
     width: 33%;
     float: right;
-
 }
 
-#center {
-    margin: 0 auto;
+#center-about {
     width: 33%;
-
+    margin: 0 auto;
 }
 
 hr {
-    border-top: 4px solid #3a3a3a;
+    border-top: 1px solid #3a3a3a;
     width: 100%;
-    margin: 5px;
+    margin: 5px 0;
 }
 
-.left-heading {
+.left-about-heading {
     width: 60%;
     float: right;
     line-height: 20px;
@@ -145,18 +153,25 @@ hr {
     margin-bottom: 50px;
 }
 
-.right-heading {
+.right-about-heading {
     width: 60%;
     float: left;
     line-height: 20px;
     clear: both;
     margin-bottom: 50px;
+}
+
+.right-about-heading h2 {
+    text-align: right;
+}
+
+.right-about-heading p {
     text-align: right;
 }
 
 #welcome {
     text-align: center;
-    margin: 20px;
+    margin: 20px 0;
     font-size: 280%;
 }
 
@@ -164,30 +179,33 @@ hr {
     width: 300px;
     height: 300px;
     padding: 30px;
-    border-width: 1px;
-    border-color: #ccc;
     border-style: solid;
+    border-color: #ccc;
+    border-width: 1px;
     border-radius: 50%;
     margin: 0 auto;
-
 }
 
-#circle-cover {
-    background-image: url('../images/ethos-center-image.jpg') no-repeat center center;
+#circle-cover-bg {
+    background: url('../images/ethos-center-image.jpg') no-repeat center center;
     height: 100%;
+    border-radius: 50%;
 }
+
+/* event times */
 
 #times {
     background-image: url('../images/dublin-city.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    width: 100;
+    width: 100%;
     overflow: hidden;
 }
 
 #times div {
     color: #fafafa;
+    background-color: rgba(0, 0, 0, .6);
     width: 20%;
     height: 300px;
     float: left;
@@ -195,30 +213,30 @@ hr {
     text-align: center;
     border: 2px solid white;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.601);
 }
 
 #times h2 {
-    color: white;
+    color: #fafafa;
 }
+
+/* footer */
 
 footer {
     height: 150px;
 }
 
-.social {
+.social-networks {
     text-align: center;
-
 }
 
-.social>li {
+.social-networks>li {
     display: inline;
 }
 
-.social i {
+.social-networks i {
     font-size: 160%;
-    padding: 5%;
     margin: 1%;
+    padding: 5%;
     color: #3a3a3a;
 }
 
@@ -233,4 +251,91 @@ footer {
 
 #photos>img {
     width: 100%;
+}
+
+/* Media queries */
+
+/* For larger to medium screens size from 1200px wide and down */
+@media screen and (max-width: 1200px) {
+    #club-ethos {
+        width: 65%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    #welcome {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    #left-about,
+    #right-about {
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #center-about {
+        clear: both;
+        width: 100%;
+        float: left;
+        padding: 0;
+    }
+
+    #times>div {
+        width: 100%;
+        clear: both;
+        height: 150px;
+        padding: 0;
+    }
+
+    hr {
+        display: none;
+    }
+}
+
+/* For medium screen sizes from 950px wide and down */
+@media screen and (max-width: 950px) {
+
+    #menu {
+        clear: left;
+        float: left;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        line-height: 25px;
+    }
+
+    #cover-text {
+        left: 0;
+    }
+
+    #club-ethos {
+        width: 90%;
+        height: 1200px;
+        margin: 0 auto;
+    }
+
+    .left-about-heading,
+    .right-about-heading {
+        width: inherit;
+    }
+
+    .left-about-heading h2,
+    .right-about-heading h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left-about-heading p,
+    .right-about-heading p {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* For small screen sizes below 800px width */
+@media screen and (max-width: 800px) {
+    #photos {
+        column-count: 2;
+    }
 }
